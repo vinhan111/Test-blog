@@ -2,12 +2,12 @@
 import "../styles/global.css";
 import { Font } from "astro:assets";
 import { ClientRouter } from 'astro:transitions';
-import LoadingIndicator from "astro-loading-indicator/component"
+import LoadingIndicator from 'node_modules/astro-loading-indicator/src/LoadingIndicator.astro';
 
-const { title, description } = Astro.props;
+const { title, description, mermaid } = Astro.props;
 
-const defaultTitle = "Nikola Tesla";
-const defaultDescription = "Nikola Tesla was a Serbian-American inventor, electrical engineer, mechanical engineer, and futurist who is best known for his contributions to the design of the modern alternating current (AC) electricity supply system.";
+const defaultTitle = "Between Logic & Light";
+const defaultDescription = "Blog cá nhân chia sẻ những kinh nghiệm, nghiên cứu và nhật ký của Thinker Phạm Vĩnh An";
 ---
 
 <!doctype html>
@@ -20,24 +20,27 @@ const defaultDescription = "Nikola Tesla was a Serbian-American inventor, electr
 		<title>{title ?? defaultTitle}</title>
 		<meta name="description" content={description ?? defaultDescription} />
 
-		<meta property="og:url" content="https://nikola.fluidinterfaces.com/" />
+		<meta property="og:url" content="https://vinhan.io.vn/" />
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content={defaultTitle} />
 		<meta property="og:description" content={defaultDescription} />
 		<meta property="og:image" content="/social-image.jpg" />
 
-		<!-- Twitter Meta Tags -->
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta property="twitter:domain" content="nikola.fluidinterfaces.com" />
-		<meta property="twitter:url" content="https://nikola.fluidinterfaces.com/" />
-		<meta name="twitter:title" content={defaultTitle} />
-		<meta name="twitter:description" content={defaultDescription} />
-		<meta name="twitter:image" content="/social-image.jpg" />
-
 		<Font cssVariable="--font-geist" preload />
 		<ClientRouter />
-		<LoadingIndicator color="#f4f4f5" height="2px" />
-
+		<LoadingIndicator color="#008000" height="20px" />
+		{mermaid && (
+			<>
+			  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+			  <script>
+				document.addEventListener("DOMContentLoaded", () => {
+				  if (window.mermaid) {
+					window.mermaid.initialize({ startOnLoad: true });
+				  }
+				});
+			  </script>
+			</>
+		  )}
 	</head>
 	<body class="font-sans min-h-screen bg-zinc-900">
 		<slot />

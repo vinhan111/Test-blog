@@ -1,5 +1,5 @@
 import { z } from "astro:schema";
-import { defineAction } from "../../node_modules/astro/dist/actions/runtime/virtual/server";
+import { defineAction } from "astro:actions";
 import { getCollection } from "astro:content";
 
 export const categories = {

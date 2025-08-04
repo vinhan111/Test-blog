@@ -17,6 +17,7 @@ const articles = defineCollection({
         updatedDate: z.coerce.date().optional(),
         author: z.string().default('Retro Rocket Team'),
         relatedArticles: z.array(reference('articles')).optional(),
+        mermaid: z.boolean().default(false)
     }),
 });
 

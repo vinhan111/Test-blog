@@ -1,6 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap');
+
 @import "tailwindcss";
 @plugin '@tailwindcss/typography';
 
+
 @theme inline {
-	--font-sans: var(--font-geist);
+	--font-sans: var(--font-be);
 }
+
+:root {
+	--font-be: "Be Vietnam Pro", sans-serif;
+  }
+  
+  body {
+	font-family: var(--font-be);
+  }

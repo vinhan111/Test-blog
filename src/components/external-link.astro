@@ -14,7 +14,7 @@ const pathname = Astro.url.pathname;
 <a href={href} target={openNewTab ? "_blank" : "_self"} 
     class={clsx(
         "w-fit group flex items-center gap-1 text-base hover:text-zinc-100 cursor-pointer",
-        pathname === href ? "text-zinc-100" : "text-zinc-500"
+        pathname === href ? "text-[#e9e4d4]" : "text-[#bcae85]"
     )}>
     <slot />
    {openNewTab &&  
