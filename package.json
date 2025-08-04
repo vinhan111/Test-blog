@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^12.6.2",
     "@astrojs/mdx": "^4.3.3",
     "@astrojs/react": "^4.2.5",
     "@astrojs/vercel": "^8.2.5",
@@ -18,11 +19,12 @@
     "@types/react-dom": "^19.1.2",
     "astro": "^5.7.5",
     "astro-loading-indicator": "^0.7.0",
+    "astro-mermaid": "^1.0.4",
     "clsx": "^2.1.1",
+    "mermaid": "^11.9.0",
     "motion": "^12.9.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "rehype-mermaid": "^3.0.0",
     "sharp": "^0.34.1",
     "tailwindcss": "^4.1.4"
   },
