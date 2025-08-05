@@ -13,23 +13,8 @@ author: Vĩnh An
 mermaid: true
 
 ---
-import MermaidChart from '../../components/MermaidChart.astro';
-
-> Bài viết này dùng để kiểm tra xem sơ đồ Mermaid có được hiển thị đúng không trong hệ thống Astro Layout tùy biến.
-
----
-
-
-## Sơ đồ tiến hóa năng lượng
-
-<MermaidChart
-  code={`graph TD
-    A[Khan hiếm năng lượng] --> B[Ưu tiên phát triển não bộ]
-    B --> C[Nấu ăn, lửa trại]
-    C --> D[Cộng đồng – Giao tiếp – Văn hóa]
-    D --> E[Dư thừa năng lượng hiện đại]
-    E --> F[Bệnh lý chuyển hóa – stress]
-    F --> G[Phòng gym – Yoga – Chạy bộ]
-    G --> H[Tái thiết lập cân bằng: Cơ bắp – Tâm trí – Xã hội]
-  `}
-/>
+```mermaid
+graph TD
+    A[Start] --> B[Process]
+    B --> C[End]
+```

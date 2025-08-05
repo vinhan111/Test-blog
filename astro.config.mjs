@@ -1,11 +1,10 @@
 // @ts-check
-import { defineConfig, fontProviders } from 'astro/config';
+import { defineConfig, fontProviders, sharpImageService } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
-
-import vercel from "@astrojs/vercel";
-import rehypeMermaid from 'rehype-mermaid';
+import mermaid from 'astro-mermaid';
+import cloudflare from '@astrojs/cloudflare';
 
 import mdx from "@astrojs/mdx";
 
@@ -16,10 +15,17 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
-  integrations: [react(), mdx(
-
-    {rehypePlugins:[rehypeMermaid]}
-  )],
+  integrations: [react(), mdx(), 
+    
+    mermaid({
+      theme: 'dark',
+      autoTheme: true,
+      mermaidConfig: {
+        flowchart: {
+          curve: 'basis'
+        }}
+    }),
+  ],
 
   experimental: {
     fonts: [{
@@ -32,5 +38,8 @@ export default defineConfig({
 
   
 
-  adapter: vercel()
+  adapter: cloudflare
+  ({
+    imageService: 'compile'
+  })
 });
