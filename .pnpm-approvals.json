@@ -1,0 +1,9 @@
+{
+    "approved": [
+      "@tailwindcss/oxide",
+      "esbuild",
+      "sharp",
+      "workerd"
+    ]
+  }
+  
