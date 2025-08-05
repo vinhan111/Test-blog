@@ -10,7 +10,7 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-   output: 'server',
+   output: 'static',
   vite: {
     plugins: [tailwindcss()]
   },
@@ -36,10 +36,9 @@ export default defineConfig({
     }]
   },
 
-  
-
   adapter: cloudflare
   ({
+    
     imageService: 'compile'
   })
 });
