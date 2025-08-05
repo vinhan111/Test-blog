@@ -4,7 +4,7 @@ import { defineConfig, fontProviders, sharpImageService } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 import mermaid from 'astro-mermaid';
-import cloudflare from '@astrojs/cloudflare';
+import vercel from '@astrojs/vercel';
 
 import mdx from "@astrojs/mdx";
 
@@ -36,9 +36,5 @@ export default defineConfig({
     }]
   },
 
-  adapter: cloudflare
-  ({
-    
-    imageService: 'compile'
-  })
+  adapter: vercel()
 });
