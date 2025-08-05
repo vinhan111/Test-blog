@@ -8,15 +8,15 @@ const articles = defineCollection({
   }),
   schema: ({ image }) =>
     z.object({
-      cover: image(),
-      coverAlt: z.string(),
+      cover: image().nullable().optional(),
+      coverAlt: z.string().optional(),
       title: z.string(),
       slug: z.string(),
       snippet: z.string(),
       category: z.string(),
       pubDate: z.coerce.date(),
       readingDuration: z.number(),
-      originalLink: z.string().url(),
+      originalLink: z.string().url().nullable().optional(),
       isDraft: z.boolean().default(false),
       updatedDate: z.coerce.date().optional(),
       author: z.string().default("Retro Rocket Team"),

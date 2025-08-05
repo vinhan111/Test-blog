@@ -1,57 +1,44 @@
 ---
 import "../styles/global.css";
 import { Font } from "astro:assets";
-import { ClientRouter } from 'astro:transitions';
-import LoadingIndicator from 'node_modules/astro-loading-indicator/src/LoadingIndicator.astro';
+import { ClientRouter } from "astro:transitions";
+import LoadingIndicator from "node_modules/astro-loading-indicator/src/LoadingIndicator.astro";
 
 const { title, description, mermaid } = Astro.props;
 
 const defaultTitle = "Between Logic & Light";
-const defaultDescription = "Blog cá nhân chia sẻ những kinh nghiệm, nghiên cứu và nhật ký của Thinker Phạm Vĩnh An";
+const defaultDescription =
+  "Blog cá nhân chia sẻ những kinh nghiệm, nghiên cứu và nhật ký của Thinker Phạm Vĩnh An";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title ?? defaultTitle}</title>
-		<meta name="description" content={description ?? defaultDescription} />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title ?? defaultTitle}</title>
+    <meta name="description" content={description ?? defaultDescription} />
 
-		<meta property="og:url" content="https://vinhan.io.vn/" />
-		<meta property="og:type" content="website" />
-		<meta property="og:title" content={defaultTitle} />
-		<meta property="og:description" content={defaultDescription} />
-		<meta property="og:image" content="/social-image.jpg" />
+    <meta property="og:url" content="https://vinhan.io.vn/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={defaultTitle} />
+    <meta property="og:description" content={defaultDescription} />
+    <meta property="og:image" content="/social-image.jpg" />
 
-		<Font cssVariable="--font-geist" preload />
-		<ClientRouter />
-		<LoadingIndicator color="#008000" height="20px" />
-		{mermaid && (
-			<>
-			  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-			  <script>
-				document.addEventListener("DOMContentLoaded", () => {
-				  if (window.mermaid) {
-					window.mermaid.initialize({ startOnLoad: true });
-				  }
-				});
-			  </script>
-			</>
-		  )}
-	</head>
-	<body class="font-sans min-h-screen bg-zinc-900">
-		<slot />
-	</body>
+    <Font cssVariable="--font-geist" preload />
+    <ClientRouter />
+    <LoadingIndicator color="#008000" height="20px" />
+  </head>
+  <body class="font-sans min-h-screen bg-zinc-900">
+    <slot />
+  </body><style>
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
