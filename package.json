@@ -9,7 +9,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^12.6.2",
     "@astrojs/mdx": "^4.3.3",
     "@astrojs/react": "^4.2.5",
     "@astrojs/vercel": "^8.2.5",
