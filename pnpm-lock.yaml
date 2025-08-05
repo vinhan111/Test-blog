@@ -32,9 +32,15 @@ dependencies:
   astro-loading-indicator:
     specifier: ^0.7.0
     version: 0.7.0(astro@5.7.5)
+  astro-mermaid:
+    specifier: ^1.0.4
+    version: 1.0.4(astro@5.7.5)(mermaid@11.9.0)
   clsx:
     specifier: ^2.1.1
     version: 2.1.1
+  mermaid:
+    specifier: ^11.9.0
+    version: 11.9.0
   motion:
     specifier: ^12.9.2
     version: 12.9.2(react-dom@19.1.0)(react@19.1.0)
@@ -44,9 +50,6 @@ dependencies:
   react-dom:
     specifier: ^19.1.0
     version: 19.1.0(react@19.1.0)
-  rehype-mermaid:
-    specifier: ^3.0.0
-    version: 3.0.0(playwright@1.54.2)
   sharp:
     specifier: ^0.34.1
     version: 0.34.1
@@ -720,11 +723,6 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
-
-  /@fortawesome/fontawesome-free@6.7.2:
-    resolution: {integrity: sha512-JUOtgFW6k9u4Y+xeIaEiLr3+cjoUPiAuLXoyKOJSia6Duzb7pq+A76P9ZdPDoAoxHdHzq6gE9/jKBGXlZT8FbA==}
-    engines: {node: '>=6'}
-    dev: false
 
   /@iconify/types@2.0.0:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -2113,6 +2111,18 @@ packages:
       astro: 5.7.5(typescript@5.9.2)
     dev: false
 
+  /astro-mermaid@1.0.4(astro@5.7.5)(mermaid@11.9.0):
+    resolution: {integrity: sha512-2M4bVjqLpDB2EZ4EfD6Utzs7VEEORmlt5hNZcMK54IcKWzflohKvowCzg79RHoAdu30W8a4aECAExH8mF7wG4w==}
+    peerDependencies:
+      astro: ^4.0.0 || ^5.0.0
+      mermaid: ^10.0.0 || ^11.0.0
+    dependencies:
+      astro: 5.7.5(typescript@5.9.2)
+      mdast-util-to-string: 4.0.0
+      mermaid: 11.9.0
+      unist-util-visit: 5.0.0
+    dev: false
+
   /astro@5.7.5(typescript@5.9.2):
     resolution: {integrity: sha512-c59YuYiXyWWnUMOBlDczrjqKzF0dJQP20EP9vqDggcyKm//tEt9iJHNwoYq4r3UeO9UJCwlGK8FwaGTAwwF3IA==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
@@ -3127,6 +3137,7 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
     requiresBuild: true
+    dev: true
     optional: true
 
   /fsevents@2.3.3:
@@ -3188,23 +3199,6 @@ packages:
 
   /hachure-fill@0.5.2:
     resolution: {integrity: sha512-3GKBOn+m2LX9iq+JC1064cSFprJY4jL1jCXTcpnfER5HYE2l/4EfWSGzkPa/ZDBmYI0ZOEj5VHV/eKnPGkHuOg==}
-    dev: false
-
-  /hast-util-from-dom@5.0.1:
-    resolution: {integrity: sha512-N+LqofjR2zuzTjCPzyDUdSshy4Ma6li7p/c3pA78uTwzFgENbgbUrm2ugwsOdcjI1muO+o6Dgzp9p8WHtn/39Q==}
-    dependencies:
-      '@types/hast': 3.0.4
-      hastscript: 9.0.1
-      web-namespaces: 2.0.1
-    dev: false
-
-  /hast-util-from-html-isomorphic@2.0.0:
-    resolution: {integrity: sha512-zJfpXq44yff2hmE0XmwEOzdWin5xwH+QIhMLOScpX91e/NSGPsAzNCvLQDIEPyO2TXi+lBmU6hjLIhV8MwP2kw==}
-    dependencies:
-      '@types/hast': 3.0.4
-      hast-util-from-dom: 5.0.1
-      hast-util-from-html: 2.0.3
-      unist-util-remove-position: 5.0.0
     dev: false
 
   /hast-util-from-html@2.0.3:
@@ -3936,21 +3930,6 @@ packages:
     resolution: {integrity: sha512-IEn+pegP1aManZuckezWCO+XZQDplx1366JoVhTpMpBB1sPey/SbveZQUosKiKiGYjg1wH4pMlNgXbCiYgihQA==}
     dev: false
 
-  /mermaid-isomorphic@3.0.4(playwright@1.54.2):
-    resolution: {integrity: sha512-XQTy7H1XwHK3DPEHf+ZNWiqUEd9BwX3Xws38R9Fj2gx718srmgjlZoUzHr+Tca+O+dqJOJsAJaKzCoP65QDfDg==}
-    peerDependencies:
-      playwright: '1'
-    peerDependenciesMeta:
-      playwright:
-        optional: true
-    dependencies:
-      '@fortawesome/fontawesome-free': 6.7.2
-      mermaid: 11.9.0
-      playwright: 1.54.2
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
   /mermaid@11.9.0:
     resolution: {integrity: sha512-YdPXn9slEwO0omQfQIsW6vS84weVQftIyyTGAZCwM//MGhPzL1+l6vO6bkf0wnP4tHigH1alZ5Ooy3HXI2gOag==}
     dependencies:
@@ -4312,11 +4291,6 @@ packages:
       - supports-color
     dev: false
 
-  /mini-svg-data-uri@1.4.4:
-    resolution: {integrity: sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==}
-    hasBin: true
-    dev: false
-
   /minimatch@9.0.5:
     resolution: {integrity: sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow==}
     engines: {node: '>=16 || 14 >=14.17'}
@@ -4597,6 +4571,7 @@ packages:
     resolution: {integrity: sha512-n5r4HFbMmWsB4twG7tJLDN9gmBUeSPcsBZiWSE4DnYz9mJMAFqr2ID7+eGC9kpEnxExJ1epttwR59LEWCk8mtA==}
     engines: {node: '>=18'}
     hasBin: true
+    dev: true
 
   /playwright@1.54.2:
     resolution: {integrity: sha512-Hu/BMoA1NAdRUuulyvQC0pEqZ4vQbGfn8f7wPXcnqQmM+zct9UliKxsIkLNmz/ku7LElUNqmaiv1TG/aL5ACsw==}
@@ -4606,6 +4581,7 @@ packages:
       playwright-core: 1.54.2
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
 
   /points-on-curve@0.2.0:
     resolution: {integrity: sha512-0mYKnYYe9ZcqMCWhUjItv/oHjvgEsfKvnUTg8sAtnHr3GVy7rGkXCb6d5cSyqrWqL4k81b9CPg3urd+T7aop3A==}
@@ -4748,28 +4724,6 @@ packages:
     resolution: {integrity: sha512-uorlqlzAKjKQZ5P+kTJr3eeJGSVroLKoHmquUj4zHWuR+hEyNqlXsSKlYYF5F4NI6nl7tWCs0apKJ0lmfsXAPA==}
     dependencies:
       regex-utilities: 2.3.0
-    dev: false
-
-  /rehype-mermaid@3.0.0(playwright@1.54.2):
-    resolution: {integrity: sha512-fxrD5E4Fa1WXUjmjNDvLOMT4XB1WaxcfycFIWiYU0yEMQhcTDElc9aDFnbDFRLxG1Cfo1I3mfD5kg4sjlWaB+Q==}
-    peerDependencies:
-      playwright: '1'
-    peerDependenciesMeta:
-      playwright:
-        optional: true
-    dependencies:
-      '@types/hast': 3.0.4
-      hast-util-from-html-isomorphic: 2.0.0
-      hast-util-to-text: 4.0.2
-      mermaid-isomorphic: 3.0.4(playwright@1.54.2)
-      mini-svg-data-uri: 1.4.4
-      playwright: 1.54.2
-      space-separated-tokens: 2.0.2
-      unified: 11.0.5
-      unist-util-visit-parents: 6.0.1
-      vfile: 6.0.3
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /rehype-parse@9.0.1:
